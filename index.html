@@ -26,6 +26,30 @@ https://templatemo.com/tm-531-reflux
     <link rel="stylesheet" href="assets/css/templatemo-style.css" />
     <link rel="stylesheet" href="assets/css/owl.css" />
     <link rel="stylesheet" href="assets/css/lightbox.css" />
+<!--
+Form Submission apiSpreadsheets
+https://lovespreadsheets.medium.com/save-web-html-form-data-to-google-sheets-47e48f7517e6
+-->   
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous">
+    </script>
+    <script>
+      function SubForm (){
+        $.ajax({
+                url:'https://api.apispreadsheets.com/data/17002/',
+                type:'post',
+                data:$("#contact").serializeArray(),
+                success: function(){
+                  alert("Form Data Submitted :)")
+                },
+                error: function(){
+                  alert("There was an error :(")
+                }
+              });
+      }
+    </script>
   </head>
 
   <body>
@@ -55,21 +79,21 @@ https://templatemo.com/tm-531-reflux
             <div class="social-network">
               <ul class="soial-icons">
                 <li>
-                  <a href="https://www.facebook.com/anfas.nujum" target="_blank"
+                  <a href="https://www.facebook.com/abdu.salamok" target="_blank"
                     ><i class="fa fa-facebook"></i
                   ></a>
                 </li>
                 <li>
-                  <a href="https://twitter.com/nujum_k" target="_blank"><i class="fa fa-twitter"></i></a>
+                  <a href="https://twitter.com/AbdusalamOK1" target="_blank"><i class="fa fa-twitter"></i></a>
                 </li>
                 <li>
-                  <a href="https://in.linkedin.com/in/anfas-nujum-48718aa1" target="_blank"><i class="fa fa-linkedin"></i></a>
+                  <a href="https://www.linkedin.com/in/abdusalam-ok-009062199/" target="_blank"><i class="fa fa-linkedin"></i></a>
                 </li>
                 <!-- <li>
                   <a href="#"><i class="fa fa-dribbble"></i></a>
                 </li> -->
                 <li>
-                  <a href="mailto:anfasnujoom@gmail.com"><i class="fa fa-envelope"></i></a>
+                  <a href="mailto:abdusalamokaiims@gmail.com"><i class="fa fa-envelope"></i></a>
                 </li>
               </ul>
             </div>
@@ -184,18 +208,18 @@ https://templatemo.com/tm-531-reflux
             <h2>Contact Me</h2>
             <div class="line-dec"></div>
             <span
-              >Conversations are, with a doubt, what makes up my world. Its the doorway in, the spiral stairs upward, and the exit out the balconey. If you wanna connect, you know what to do.</span
+              >Conversations are, without a doubt, what makes up my world. Its the doorway in, the spiral stairs upward, and the exit out the balconey. If you wanna connect, you know what to do.</span
             >
           </div>
           <div class="row">
             <div class="right-content">
               <div class="container">
-                <form name ="gform" id="contact" enctype="text/plain" action="https://docs.google.com/forms/d/e/1FAIpQLScUjzOM7ykq649afcPtny0SB8Ljflhi_616xK46_1h_Mby8JA/viewform?usp=sf_link" target="hidden_iframe" onsubmit="submitted=true;">
+                <form name ="form" id="contact" onsubmit="submitted=true;">
                   <div class="row">
                     <div class="col-md-6">
                       <fieldset>
                         <input
-                          name="entry.2127790617"
+                          name="Full_Name"
                           type="text"
                           class="form-control"
                           id="entry.2127790617"
@@ -207,7 +231,7 @@ https://templatemo.com/tm-531-reflux
                     <div class="col-md-6">
                       <fieldset>
                         <input
-                          name="entry.2127790617"
+                          name="Email"
                           type="text"
                           class="form-control"
                           id="entry.2127790617"
@@ -219,7 +243,7 @@ https://templatemo.com/tm-531-reflux
                     <div class="col-md-12">
                       <fieldset>
                         <input
-                          name="entry.157355484"
+                          name="Subject"
                           type="text"
                           class="form-control"
                           id="entry.157355484"
@@ -231,7 +255,7 @@ https://templatemo.com/tm-531-reflux
                     <div class="col-md-12">
                       <fieldset>
                         <textarea
-                          name="entry.607538617"
+                          name="Message"
                           rows="6"
                           class="form-control"
                           id="entry.607538617"
@@ -240,26 +264,18 @@ https://templatemo.com/tm-531-reflux
                         ></textarea>
                       </fieldset>
                     </div>
-                    <div class="col-md-12">
-                      <fieldset>
-                        <button type="submit" id="form-submit" class="button">
-                          Send Message
-                        </button>
-                      </fieldset>
-                    </div>
                   </div>
                 </form>
-                <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
+                <button onclick="SubForm()">Send Message</button>
               </div>
             </div>
           </div>
         </div>
       </section>
     </div>
-
     <!-- Scripts -->
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"> </script>
+    <script src="vendor/jquery/jquery.min.js"></script>
     <script type="text/javascript">var submitted=false;</script>
     <script type="text/javascript">
     $('#gform').on('submit', function(e) {
@@ -268,7 +284,6 @@ https://templatemo.com/tm-531-reflux
   });
     </script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
     <script src="assets/js/isotope.min.js"></script>
     <script src="assets/js/owl-carousel.js"></script>
     <script src="assets/js/lightbox.js"></script>
